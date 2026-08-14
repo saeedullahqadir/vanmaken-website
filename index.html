@@ -1074,11 +1074,11 @@ section{position:relative;}
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
   }
 
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('video[autoplay]').forEach(function(vid){
-      vid.removeAttribute('autoplay');
-      vid.pause();
-    });
-  }
+  document.querySelectorAll('video[autoplay]').forEach(function(vid){
+    var tryPlay = function(){ vid.play().catch(function(){}); };
+    tryPlay();
+    document.addEventListener('touchstart', tryPlay, {once:true, passive:true});
+    document.addEventListener('click', tryPlay, {once:true});
+  });
 })();
 </script>
