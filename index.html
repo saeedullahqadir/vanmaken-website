@@ -79,7 +79,7 @@ img{max-width:100%;display:block;}
 }
 .nav-mark img{height:14px;}
 @media (max-width:720px){
-  .nav-mark img{height:22px;}
+  .nav-mark img{height:33px;}
 }
 .closing-mark .logo-badge img{height:clamp(26px,4.6vw,44px);}
 
@@ -87,7 +87,7 @@ img{max-width:100%;display:block;}
 .img-slot{
   position:relative;
   overflow:hidden;
-  background-color:var(--paper-raised);
+  background-color:#000000;
   background-image:repeating-linear-gradient(135deg, var(--paper-line) 0, var(--paper-line) 1.5px, transparent 1.5px, transparent 13px);
 }
 .img-slot::before{
@@ -98,7 +98,7 @@ img{max-width:100%;display:block;}
   pointer-events:none;
   z-index:1;
 }
-.img-slot.has-media{background-image:none;}
+.img-slot.has-media{background-image:none;background-color:#000000;}
 .img-slot img,
 .img-slot video{
   width:100%;
@@ -738,6 +738,38 @@ section{position:relative;}
   font-size:.68rem;
   letter-spacing:.04em;
   opacity:.5;
+}
+
+/* ---------- MOBILE TYPE BUMP ---------- */
+@media (max-width:720px){
+  body{font-size:1.125rem;}
+  .eyebrow,
+  .nav-links a,
+  .nav-kicker,
+  .section-num,
+  .img-slot-tag,
+  .img-break-caption,
+  .work-num,
+  .scale-legend span,
+  .btn,
+  .discipline-tags,
+  .closing-mark small,
+  .closing-links span,
+  .closing-links a,
+  .newsletter-label,
+  .newsletter-form button,
+  .closing-legal{
+    font-size:.85rem;
+  }
+  .closing-address,
+  .closing-contact{
+    font-size:1rem;
+  }
+  .work-desc,
+  .manifesto-body p,
+  .discipline-copy p{
+    font-size:1.1rem;
+  }
 }
 
 /* ---------- REVEAL ---------- */
