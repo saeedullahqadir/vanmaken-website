@@ -10,8 +10,8 @@
   --paper-raised:#F4F4F4;
   --paper-line:#DBDBDB;
   --ink:#000000;
-  --ink-soft:#585757;
-  --ink-faint:#A1A1AA;
+  --ink-soft:#2E2E2E;
+  --ink-faint:#6B6B6B;
   --accent:#4E5C38;
   --accent-ink:#F3F3EC;
   --accent-soft:rgba(78,92,56,0.12);
@@ -24,30 +24,6 @@
   --rail: clamp(6rem, 14vw, 13rem);
 }
 
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#000000;
-    --paper-raised:#151515;
-    --paper-line:#333333;
-    --ink:#FFFFFF;
-    --ink-soft:#A1A1AA;
-    --ink-faint:#71717A;
-    --accent:#9CB279;
-    --accent-ink:#000000;
-    --accent-soft:rgba(156,178,121,0.14);
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#000000;
-  --paper-raised:#151515;
-  --paper-line:#333333;
-  --ink:#FFFFFF;
-  --ink-soft:#A1A1AA;
-  --ink-faint:#71717A;
-  --accent:#9CB279;
-  --accent-ink:#000000;
-  --accent-soft:rgba(156,178,121,0.14);
-}
 
 *{box-sizing:border-box;}
 html{-webkit-text-size-adjust:100%;}
@@ -609,15 +585,11 @@ section{position:relative;}
 
 /* ---------- CLOSING ---------- */
 .closing{
-  background:var(--ink);
-  color:var(--paper);
+  background:var(--paper);
+  color:var(--ink);
+  border-top:1px solid var(--paper-line);
   padding: clamp(4rem,10vh,7rem) var(--edge) clamp(2.5rem,6vh,3.5rem);
 }
-:root:not([data-theme="light"]) .closing, :root[data-theme="dark"] .closing{}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]) .closing{background:var(--paper-raised);color:var(--ink);}
-}
-:root[data-theme="dark"] .closing{background:var(--paper-raised);color:var(--ink);}
 .closing-top{
   display:flex;
   justify-content:space-between;
@@ -625,7 +597,7 @@ section{position:relative;}
   gap:2rem;
   flex-wrap:wrap;
   padding-bottom: clamp(2.5rem,6vh,4rem);
-  border-bottom:1px solid rgba(231,232,224,0.2);
+  border-bottom:1px solid var(--paper-line);
 }
 .closing-mark{
   display:flex;
@@ -675,7 +647,7 @@ section{position:relative;}
   gap:2.5rem;
   flex-wrap:wrap;
   padding: clamp(2.5rem,6vh,4rem) 0;
-  border-bottom:1px solid rgba(231,232,224,0.2);
+  border-bottom:1px solid var(--paper-line);
 }
 .closing-address{
   font-family:var(--font-mono);
@@ -761,7 +733,7 @@ section{position:relative;}
   gap:.75rem;
   margin-top: clamp(2.5rem,6vh,4rem);
   padding-top:1.5rem;
-  border-top:1px solid rgba(231,232,224,0.2);
+  border-top:1px solid var(--paper-line);
   font-family:var(--font-mono);
   font-size:.68rem;
   letter-spacing:.04em;
