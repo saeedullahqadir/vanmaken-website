@@ -160,6 +160,9 @@ img{max-width:100%;display:block;}
   padding:0 1.5rem;
 }
 .marquee-track span::after{content:"—";margin-left:1.5rem;color:var(--accent);}
+.marquee.--plain .marquee-track span{padding:0 .5rem;}
+.marquee.--plain .marquee-track span::after{content:none;}
+.marquee.--plain .marquee-track span.x{color:var(--accent);padding:0 .2rem;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
 
@@ -408,20 +411,6 @@ section{position:relative;}
   margin:0 0 1.1em;
 }
 .manifesto-body p:last-child{margin-bottom:0;}
-.equation{
-  margin-top:2.25rem;
-  font-family:var(--font-mono);
-  font-size:.78rem;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:var(--ink);
-  justify-content:center;
-  display:flex;
-  flex-wrap:wrap;
-  gap:.5em .8em;
-  align-items:center;
-}
-.equation .x{color:var(--accent);}
 
 /* ---------- WHAT WE DO ---------- */
 .discipline{
@@ -548,16 +537,21 @@ section{position:relative;}
   font-size:clamp(1.9rem,4.5vw,3.2rem);
   max-width:14ch;
 }
+.connections-title{
+  font-size:clamp(1.9rem,4.4vw,2.9rem);
+  text-align:center;
+  margin:0 auto 2rem;
+}
 .connections{
   list-style:none;
-  margin:2.25rem 0 0;
+  margin:2.25rem auto 0;
   padding:0;
   max-width:44ch;
 }
 .connections li{
   position:relative;
   padding:1.15rem 0 1.15rem 2rem;
-  font-size:1.05rem;
+  font-size:1.25rem;
   color:var(--ink-soft);
   border-top:1px solid var(--paper-line);
 }
@@ -572,6 +566,13 @@ section{position:relative;}
   border:1.5px solid var(--accent);
   transform:translateY(-50%);
   background:var(--paper);
+}
+.connections-close{
+  margin:2rem auto 0;
+  color:var(--ink-soft);
+  max-width:40ch;
+  font-size:1.15rem;
+  text-align:center;
 }
 .connections{position:relative;}
 .connections::after{
@@ -853,13 +854,15 @@ section{position:relative;}
       <p>The future of the city is not simply greener, denser or smarter. It needs to be more human and more responsive to its environment.</p>
       <p>VANMAKEN brings architecture, urbanism, landscape and environmental thinking together to create integrated places that work across scales — from the individual building to the city.</p>
     </div>
-    <div class="equation">
-      <span>Human experience</span><span class="x">×</span>
-      <span>Climate intelligence</span><span class="x">×</span>
-      <span>Urban systems</span>
-    </div>
   </div>
 </section>
+
+<div class="marquee --plain" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Human Experience</span><span class="x">×</span><span>Climate Intelligence</span><span class="x">×</span><span>Urban Systems</span>
+    <span>Human Experience</span><span class="x">×</span><span>Climate Intelligence</span><span class="x">×</span><span>Urban Systems</span>
+  </div>
+</div>
 
 <section data-reveal>
   <div class="img-slot img-break has-media">
@@ -990,20 +993,17 @@ section{position:relative;}
 </section>
 
 <section class="how-we-think" data-reveal>
-  <div class="section-grid">
-    <div class="section-label">
-      <div class="eyebrow">The Connections</div>
-    </div>
-    <div>
-      <ul class="connections">
-        <li><strong>Architecture</strong> connects people to place.</li>
-        <li><strong>Urbanism</strong> connects buildings to cities.</li>
-        <li><strong>Landscape</strong> connects people to nature.</li>
-        <li><strong>Climate</strong> connects design to environment.</li>
-        <li><strong>Technology</strong> connects ideas to performance.</li>
-      </ul>
-      <p style="margin-top:2rem;color:var(--ink-soft);max-width:40ch;">We bring these relationships together.</p>
-    </div>
+  <div class="section-header"><span class="eyebrow">How We Think</span></div>
+  <div class="section-body">
+    <h2 class="h-display connections-title">The Connections</h2>
+    <ul class="connections">
+      <li><strong>Architecture</strong> connects people to place.</li>
+      <li><strong>Urbanism</strong> connects buildings to cities.</li>
+      <li><strong>Landscape</strong> connects people to nature.</li>
+      <li><strong>Climate</strong> connects design to environment.</li>
+      <li><strong>Technology</strong> connects ideas to performance.</li>
+    </ul>
+    <p class="connections-close">We bring these relationships together.</p>
   </div>
 </section>
 
